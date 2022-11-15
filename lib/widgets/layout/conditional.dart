@@ -18,9 +18,9 @@ class Conditional extends StatelessWidget {
       throw ConditionalError(children, conditions);
     }
     return RecursiveConditional(
-      children: children,
       conditions: conditions,
       index: 0,
+      children: children,
     );
   }
 }

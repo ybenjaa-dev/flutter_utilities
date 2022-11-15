@@ -54,8 +54,8 @@ class _State extends State<LockIcon> {
     final size = this.size;
     if (size != null) {
       return ConstrainedBox(
-        child: icon,
         constraints: BoxConstraints.loose(size),
+        child: icon,
       );
     }
     return icon;

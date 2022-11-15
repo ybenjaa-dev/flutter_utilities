@@ -209,22 +209,8 @@ class _State extends State<SocialNetworkIconButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: margin,
       child: Clickable(
-        child: AnimatedContainer(
-          alignment: Alignment.center,
-          child: icon.copyWith(
-            color: foreground,
-            size: iconSize,
-          ),
-          clipBehavior: Clip.antiAlias,
-          constraints: BoxConstraints.tight(size),
-          decoration: BoxDecoration(
-            border: border,
-            color: background,
-            shape: BoxShape.circle,
-          ),
-          duration: duration,
-        ),
         cursor: SystemMouseCursors.click,
         onEnter: (_) {
           onEnter();
@@ -233,8 +219,22 @@ class _State extends State<SocialNetworkIconButton> {
           onExit();
         },
         onTap: onTap,
+        child: AnimatedContainer(
+          alignment: Alignment.center,
+          clipBehavior: Clip.antiAlias,
+          constraints: BoxConstraints.tight(size),
+          decoration: BoxDecoration(
+            border: border,
+            color: background,
+            shape: BoxShape.circle,
+          ),
+          duration: duration,
+          child: icon.copyWith(
+            color: foreground,
+            size: iconSize,
+          ),
+        ),
       ),
-      margin: margin,
     );
   }
 }

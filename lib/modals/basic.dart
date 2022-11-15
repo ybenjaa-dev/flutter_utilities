@@ -7,7 +7,9 @@ class BasicModal extends StatelessWidget {
   final String message;
   final String closeString;
 
-  const BasicModal(this.title, this.message, {Key? key, this.closeString = "Fermer"}) : super(key: key);
+  const BasicModal(this.title, this.message,
+      {Key? key, this.closeString = "Fermer"})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class BasicModal extends StatelessWidget {
           message,
           textStyle: const TextStyle(fontSize: 17),
           onTapUrl: (url) {
-            launch(url);
+            launchUrl(Uri.parse(url));
             return true;
           },
         ),

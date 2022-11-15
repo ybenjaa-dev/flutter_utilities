@@ -39,9 +39,9 @@ class RecursiveConditional extends StatelessWidget {
      * }
     */
     final recursive = RecursiveConditional(
-      children: children,
       conditions: conditions,
       index: index + 1,
+      children: children,
     );
     return recursive.build(context);
   }

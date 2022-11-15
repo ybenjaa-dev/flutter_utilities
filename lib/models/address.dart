@@ -39,7 +39,7 @@ class Address {
 
   @override
   String toString() {
-    return '${(apt != null && apt != "") ? apt! + "-" : ""}$number $street, $city, $province, $zipCode';
+    return '${(apt != null && apt != "") ? "${apt!}-" : ""}$number $street, $city, $province, $zipCode';
   }
 
   static bool validateZipCode(String zipCode) {

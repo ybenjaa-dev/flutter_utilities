@@ -1,10 +1,10 @@
 import 'dart:async';
 
+import 'package:apollocode_dart_utilities/src/models/type_paginated.dart';
 import 'package:apollocode_flutter_utilities/notifications/items_notification.dart';
 import 'package:apollocode_flutter_utilities/notifications/selected_item_notification.dart';
 import 'package:apollocode_flutter_utilities/widgets/fields/async_auto_complete_text_field/overlay_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:apollocode_dart_utilities/src/models/type_paginated.dart';
 import 'package:flutter/services.dart';
 
 class AsyncAutoCompleteTextField<T> extends StatefulWidget {

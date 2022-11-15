@@ -1,4 +1,3 @@
-import 'package:apollocode_flutter_utilities/helpers/adaptive.dart';
 import 'package:apollocode_flutter_utilities/models/responsive_models/responsive_size.dart';
 import 'package:flutter/material.dart';
 

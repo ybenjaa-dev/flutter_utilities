@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:apollocode_flutter_utilities/services/auth.dart';
-import 'package:flutter/material.dart';
 import 'package:eventify/eventify.dart';
+import 'package:flutter/material.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 class WebsocketService {
@@ -42,12 +42,6 @@ class WebsocketService {
 
   static void _handleMessage(dynamic args) {
     try {
-      print(args);
-      print(args);
-      print(args);
-      print(args);
-      print(args);
-      print(args);
       Map<String, dynamic> castedArgs = jsonDecode(args.toString());
       if (WebsocketService.printEventsToConsole) {
         debugPrint(castedArgs['channel']);

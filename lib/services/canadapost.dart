@@ -1,9 +1,9 @@
 import 'dart:convert';
+
 import 'package:apollocode_dart_utilities/apollocode_dart_utilities.dart';
 import 'package:apollocode_flutter_utilities/models/address.dart';
 import 'package:apollocode_flutter_utilities/services/auth.dart';
 import 'package:flutter/material.dart';
-
 import 'package:http/http.dart' as http;
 
 class CanadaPostService {
@@ -14,7 +14,6 @@ class CanadaPostService {
 
   static Future<List<Suggestion>> getAddressesSuggestions(
       {Map<String, dynamic>? queryParameters}) async {
-
     String queryParams = "";
 
     if (queryParameters != null) {
@@ -37,7 +36,8 @@ class CanadaPostService {
           for (var i = 0; i < data["Items"].length; i++) {
             var temp = Suggestion.fromJson(data["Items"][i]);
 
-            if (temp.description != "Text or Container Required" && !temp.description!.endsWith('Addresses')) {
+            if (temp.description != "Text or Container Required" &&
+                !temp.description!.endsWith('Addresses')) {
               suggestions.add(temp);
             }
           }

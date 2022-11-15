@@ -1,4 +1,3 @@
-import 'package:apollocode_flutter_utilities/errors/responsive_error.dart';
 import 'package:apollocode_flutter_utilities/helpers/dimensions_helper.dart';
 
 abstract class Responsive<T> {

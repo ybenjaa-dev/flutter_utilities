@@ -1,10 +1,9 @@
-import 'package:apollocode_flutter_utilities/models/address.dart';
 import 'package:apollocode_dart_utilities/apollocode_dart_utilities.dart';
-
+import 'package:apollocode_flutter_utilities/models/address.dart';
+import 'package:apollocode_flutter_utilities/models/form_field_input.dart';
 import 'package:apollocode_flutter_utilities/services/canadapost.dart';
 import 'package:apollocode_flutter_utilities/widgets/input_field.dart';
 import 'package:flutter/material.dart';
-import 'package:apollocode_flutter_utilities/models/form_field_input.dart';
 
 class AddressForm extends StatefulWidget {
   final Function(
@@ -13,7 +12,12 @@ class AddressForm extends StatefulWidget {
   final String searchLabel;
   final ListTileStyle? listTileStyle;
 
-  const AddressForm({Key? key, this.onAddressCompleted, this.searchLabel = "Recherche", this.listTileStyle}) : super(key: key);
+  const AddressForm(
+      {Key? key,
+      this.onAddressCompleted,
+      this.searchLabel = "Recherche",
+      this.listTileStyle})
+      : super(key: key);
 
   @override
   State<AddressForm> createState() => _AddressFormState();
@@ -25,10 +29,10 @@ class _AddressFormState extends State<AddressForm> {
   bool hasListeners = false;
   List<Suggestion> suggestions = [];
 
-  Future getSuggestions(String _search) async {
+  Future getSuggestions(String search) async {
     var results =
         await CanadaPostService.getAddressesSuggestions(queryParameters: {
-      'Text': _search,
+      'Text': search,
       'Origin': 'CAN',
       'Limit': 5,
       'SESSION': '763fb251-9ff6-fe26-e4e8-31dac526e585'
