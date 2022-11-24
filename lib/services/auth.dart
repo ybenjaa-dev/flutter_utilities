@@ -5,7 +5,6 @@ import 'package:crypto/crypto.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
@@ -130,17 +129,18 @@ class Auth {
     return await FirebaseAuth.instance.signInWithCredential(oauthCredential);
   }
 
-  static Future<UserCredential> signInWithFacebook() async {
-    // Trigger the sign-in flow
-    final LoginResult loginResult = await FacebookAuth.instance.login();
+  // static Future<UserCredential> signInWithFacebook() async {
+  //   // Trigger the sign-in flow
+  //   // final LoginResult loginResult = await FacebookAuth.instance.login();
 
-    // Create a credential from the access token
-    final OAuthCredential facebookAuthCredential =
-        FacebookAuthProvider.credential(loginResult.accessToken!.token);
+  //   // Create a credential from the access token
+  //   // final OAuthCredential facebookAuthCredential =
+  //       // FacebookAuthProvider.credential(loginResult.accessToken!.token);
 
-    // Once signed in, return the UserCredential
-    return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
-  }
+  //   // Once signed in, return the UserCredential
+  //   // return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
+
+  // }
 
   static Future<UserCredential> signInWithFacebookWeb() async {
     // Create a new provider
